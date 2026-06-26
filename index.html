@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大蜘蛛日志解析器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="gold-text">大蜘蛛日志解析器</h1>
+      <p class="subtitle">Warframe Profit Taker 竞速日志分析工具</p>
+    </header>
+
+    <section class="upload-zone">
+      <div class="path-bar">
+        <span class="path-label">EE.log 路径</span>
+        <code class="path-code">%localappdata%\Warframe\</code>
+        <button class="copy-btn" id="copyBtn">复制路径</button>
+      </div>
+      <div class="drop-zone" id="dropZone">
+        <input type="file" id="fileInput" accept=".log" hidden>
+        <div class="drop-content">
+          <div class="upload-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+            </svg>
+          </div>
+          <p class="drop-text">拖拽 EE.log 文件到此处</p>
+          <p class="drop-hint">或点击选择文件</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="global-stats" id="globalStats" style="display:none"></section>
+
+    <section class="run-selector" id="runSelector" style="display:none"></section>
+
+    <section class="battle-detail" id="battleDetail" style="display:none"></section>
+
+    <section class="empty-state" id="emptyState">
+      <div class="empty-icon">📄</div>
+      <h3>等待日志文件</h3>
+      <p>拖拽或点击上传 EE.log 文件开始分析</p>
+    </section>
+  </div>
+
+  <script src="parser.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
